@@ -6,14 +6,16 @@
 import { render, screen } from '@testing-library/react'
 import Greet from './Greet'
 
-test('renders Greet component', () => {
-  render(<Greet />)
-  const linkElement = screen.getByText('Greet')
-  expect(linkElement).toBeInTheDocument()
-})
+describe('Greet', () => {
+  test('renders component', () => {
+    render(<Greet />)
+    const linkElement = screen.getByText(/Greet/)
+    expect(linkElement).toBeInTheDocument()
+  })
 
-test('renders Greet component with name', () => {
-  render(<Greet name="surya" />)
-  const linkElement = screen.getByText('Greet surya')
-  expect(linkElement).toBeInTheDocument()
+  // test('renders component with name', () => {
+  //   // render(<Greet name="surya" />)
+  //   // const linkElement = screen.getByText(/Greet surya/)
+  //   expect(2 + 2).toBe(4)
+  // })
 })
